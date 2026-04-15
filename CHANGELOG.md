@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.37] - 2026-04-15
+- Built from commit 9208af8
+- Release v1.0.37
+
 ## [1.0.36] - 2026-04-15
 - Built from commit c86f7db
 - Release v1.0.36
