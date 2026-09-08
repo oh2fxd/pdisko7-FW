@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.53] - 2026-09-08
+- Built from commit b57111d
+- Release v1.0.53
+
 ## [1.0.52] - 2026-07-22
 - Built from commit bbfdb03
 - Release v1.0.52
