@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.63] - 2026-09-10
+- Built from commit 000fab4
+- Release v1.0.63
+
 ## [1.0.62] - 2026-09-10
 - Built from commit c0f7165
 - Release v1.0.62
