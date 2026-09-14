@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.78] - 2026-09-14
+- Built from commit b053adb
+- Release v1.0.78
+
 ## [1.0.77] - 2026-09-14
 - Built from commit 3725c8e
 - Release v1.0.77
