@@ -1,19 +1,26 @@
-# PDISKO7 Firmware OTA
+# P-Disko 7 Firmware (OTA Releases)
 
-## OTA update (normal)
+Precompiled OTA firmware distribution repository for **P-Disko 7 (`pdisko7`)** — ESP32-S3 7-inch smart weather, energy, and ambient telemetry display.
 
-Download latest firmware: [pdisko7.bin](pdisko7.bin)
+## Overview
+P-Disko 7 provides a high-contrast LVGL dashboard displaying local weather station telemetry, Nordpool spot electricity pricing, custom icon packs, and ambient Wallhaven backgrounds on a 7-inch 800×480 IPS touch screen.
 
-The device updates itself over the air and picks the correct partition slot; just use the built-in OTA update in the web interface. Do NOT flash `pdisko7.bin` manually at offset 0 - it is app-only and will not boot without a bootloader/partition table.
+## Hardware Target
+- **MCU**: ESP32-S3 (16 MB Flash, 8 MB Octal PSRAM)
+- **Display**: 7-inch 800×480 RGB TFT (LVGL hardware-accelerated double buffering in PSRAM)
 
-## Manual flash (full image)
+## Flashing Instructions
 
-If you want to flash the device yourself with a serial flasher, use the merged full-flash image:
+### 1. Network OTA Update
+Upload the `.bin` image via the device web portal or `curl`:
+```bash
+curl -F "update=@pdisko7.bin" http://<device-ip>/update
+```
 
-Download: [pdisko7.merged.bin](pdisko7.merged.bin)
+### 2. Serial Flashing (`esptool.py`)
+```bash
+esptool.py --chip esp32s3 --port /dev/ttyACM0 --baud 921600 write_flash 0x10000 pdisko7.bin
+```
 
-- Use a tool such as https://esptool.spacehuhn.com/ ("Fully erase" then flash)
-- Offset: `0x0000`
-- Size: 16MB (full flash), includes bootloader + partition table + app
-
-**Warning:** this image contains an empty FAT filesystem. Flashing it erases your configuration, background images, and wallhaven cache (device will run with defaults).
+## License
+Distributed under the [MIT License](./LICENSE). Copyright (c) 2026 OH2FXD.
